@@ -9,7 +9,7 @@ Installation of the NMEA parsing library is the typical make route:
     unzip nmealib-0.5.3.zip
     cd nmealib
     make
-    sudo make install
+    sudo cp -r lib include /usr/local
 
 ## Installation
 
