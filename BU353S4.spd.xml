@@ -21,7 +21,5 @@
     <programminglanguage name="C++"/>
     <humanlanguage name="EN"/>
     <os name="Linux"/>
-    <processor name="x86"/>
-    <processor name="x86_64"/>
   </implementation>
 </softpkg>
