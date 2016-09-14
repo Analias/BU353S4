@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE softpkg PUBLIC "-//JTRS//DTD SCA V2.2.2 SPD//EN" "softpkg.dtd">
-<softpkg id="DCE:40e228dc-a495-410d-b4b6-0fa360ba2a37" name="BU353S4" type="2.0.0">
+<softpkg id="DCE:40e228dc-a495-410d-b4b6-0fa360ba2a37" name="BU353S4" type="2.0.2">
   <title></title>
   <author>
     <name>null</name>

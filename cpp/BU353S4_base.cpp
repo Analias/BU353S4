@@ -42,6 +42,8 @@ BU353S4_base::~BU353S4_base()
 {
     delete GPS_in;
     GPS_in = 0;
+    delete NavData_in;
+    NavData_in = 0;
 }
 
 void BU353S4_base::construct()
@@ -50,6 +52,8 @@ void BU353S4_base::construct()
 
     GPS_in = new frontend::InGPSPort("GPS_in", this);
     addPort("GPS_in", GPS_in);
+    NavData_in = new frontend::InNavDataPort("NavData_in", this);
+    addPort("NavData_in", NavData_in);
 
 }
 

@@ -19,6 +19,7 @@
       <provides repid="IDL:FRONTEND/GPS:1.0" providesname="GPS_in">
         <porttype type="data"/>
       </provides>
+      <provides repid="IDL:FRONTEND/NavData:1.0" providesname="NavData_in"/>
     </ports>
   </componentfeatures>
   <interfaces>
@@ -46,5 +47,6 @@
     <interface name="LogEventConsumer" repid="IDL:CF/LogEventConsumer:1.0"/>
     <interface name="LogConfiguration" repid="IDL:CF/LogConfiguration:1.0"/>
     <interface name="GPS" repid="IDL:FRONTEND/GPS:1.0"/>
+    <interface name="NavData" repid="IDL:FRONTEND/NavData:1.0"/>
   </interfaces>
 </softwarecomponent>

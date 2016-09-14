@@ -35,9 +35,14 @@ class BU353S4_i : public BU353S4_base
         frontend::GpsTimePos get_gps_time_pos(const std::string& port_name);
         void set_gps_time_pos(const std::string& port_name, const frontend::GpsTimePos &gps_time_pos);
 
+        // Frontend::NavData interfaces from fe_navdata_port_impl.h
+        frontend::NavigationPacket get_nav_packet(const std::string& port_name);
+        void set_nav_packet(const std::string& port_name, const frontend::NavigationPacket &nav_info);
+
     private:
         frontend::GPSInfo _gps_info;
         frontend::GpsTimePos _gps_time_pos;
+        frontend::NavigationPacket _navPacket;
 
         // File descriptor for serial stream from GPS
 		// Circular buffer for NMEA messages

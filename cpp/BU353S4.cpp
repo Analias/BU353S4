@@ -444,7 +444,15 @@ int BU353S4_i::serviceFunction()
             _gps_info.timestamp = tstamp;
             _gps_time_pos.timestamp = tstamp;
 
+            // Update navigation packet (Note, not using all fields)
+            _navPacket.source_id = this->identifier();
+            _navPacket.position.alt = _gps_time_pos.position.alt;
+            _navPacket.position.lat = _gps_time_pos.position.lat;
+            _navPacket.position.lon = _gps_time_pos.position.lon;
+            _navPacket.timestamp = tstamp;
+
             // Debug output
+            dbg << "From NMEA Parser:\n";
             dbg << "Satellite count:    " << _bufferInfo.satinfo.inview << '\n';
             dbg << "UTC Seconds:        " << tstamp.twsec << '\n';
             dbg << "Latitude:           " << _bufferInfo.lat << '\n';
@@ -462,6 +470,7 @@ int BU353S4_i::serviceFunction()
 
     // validate data based on satellite count
     _gps_time_pos.position.valid = (5 <= _gps_info.satellite_count) ? true : false;
+    _navPacket.position.valid = _gps_time_pos.position.valid;
 
     return retval;
 }
@@ -508,4 +517,10 @@ frontend::GpsTimePos BU353S4_i::get_gps_time_pos(const std::string& port_name)
 void BU353S4_i::set_gps_time_pos(const std::string& port_name, const frontend::GpsTimePos &gps_time_pos)
 {
 }
+
+// Frontend::NavData interfaces
+frontend::NavigationPacket BU353S4_i::get_nav_packet(const std::string& port_name) {
+	return _navPacket;
+}
+void BU353S4_i::set_nav_packet(const std::string& port_name, const frontend::NavigationPacket &nav_info) {}
 

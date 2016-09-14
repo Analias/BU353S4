@@ -9,7 +9,7 @@
 
 #define BOOL_VALUE_HERE 0
 
-class BU353S4_base : public Device_impl, public virtual frontend::gps_delegation, protected ThreadedComponent
+class BU353S4_base : public Device_impl, public virtual frontend::gps_delegation, public virtual frontend::nav_delegation, protected ThreadedComponent
 {
     public:
         BU353S4_base(char *devMgr_ior, char *id, char *lbl, char *sftwrPrfl);
@@ -39,6 +39,8 @@ class BU353S4_base : public Device_impl, public virtual frontend::gps_delegation
         // Ports
         /// Port: GPS_in
         frontend::InGPSPort *GPS_in;
+        /// Port: NavData_in
+        frontend::InNavDataPort *NavData_in;
 
 
 
