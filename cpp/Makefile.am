@@ -4,6 +4,8 @@ bin_PROGRAMS = BU353S4
 
 xmldir = $(prefix)/dev/devices/BU353S4/
 dist_xml_DATA = ../BU353S4.scd.xml ../BU353S4.prf.xml ../BU353S4.spd.xml
+confdir = $(prefix)/dev/devices/BU353S4/
+dist_conf_SCRIPTS = ../nodeconfig.py
 ACLOCAL_AMFLAGS = -I m4 -I${OSSIEHOME}/share/aclocal/ossie
 AUTOMAKE_OPTIONS = subdir-objects
 
